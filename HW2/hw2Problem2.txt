@@ -1,0 +1,38 @@
+Questions related to Problem 2:
+1)
+	N = 20,000,000 T = 1:  24.75s
+	N = 20,000,000 T = 2:  16.346s
+	N = 20,000,000 T = 4:  9.533s
+	N = 20,000,000 T = 8:  8.767s
+	N = 20,000,000 T = 16: 5.172s
+
+2) 
+        N = 20,000,000 T = 1:  24.176s
+        N = 20,000,000 T = 2:  13.044s
+        N = 20,000,000 T = 4:  8.622s
+        N = 20,000,000 T = 8:  5.991s
+        N = 20,000,000 T = 16: 5.160s
+
+	The dynamic scheduling casues pretty significant increase in
+throughput, or a decrease in run time. This is due to the threads being put to
+better use so that some are not sitting idle, rather they are all doing
+productive work.
+
+	T = 16, Chunk = 2:  6.201s
+	T = 16, Chunk = 4:  5.064s
+	T = 16, Chunk = 8:  4.984s
+	T = 16, Chunk = 16: 5.220s
+	T = 16, Chunk = 32: 5.157s
+
+	In my experiments, increasing the chunk size slightly decreases
+runtime until the chunk get around 16. At this point, the larger chunk sizes
+seem to undermine the dynamic scheduline, leveling off the speed up.
+
+3)
+	If two threads are simultaneously trying to access the shared
+resource, they run the risk of a race condition: writting back the wrong data
+or overwriting a previously updated value. This can lead to inconsistent
+results as well as un-reproducable errors.
+
+	By utilizing locks on data, one can better avoid these race
+conditions, as seen by the use of omp_lock_t's in hw2c.c. 

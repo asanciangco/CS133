@@ -1,0 +1,19 @@
+The best way to achieve not recursive parallelism is to utilize reducton. This
+algorithm will compute all prefix sums from 1 to n, with a worst case time of
+T(n) = O(nlogn) (logn to computer individual prefix sum, n separate
+calculations) and a work amount of W(n) = O(n^2).
+
+Begin:
+
+if n = 1, then {set s_1 to x_1, exit}
+for(i : 1 -> n)
+{
+	prefix_sum = 1;
+	#pragma omp parallel for reduction(*:prefix_sum)
+	for(j : 1 -> i)
+	{
+		prefix_sum *= x[j]
+	}
+}
+
+End.

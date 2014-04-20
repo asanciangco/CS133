@@ -1,0 +1,32 @@
+
+1. Install
+
+To compile the program, use
+./make
+
+This will generate two files in './bin' directory, which are:
+./bin/dwt2d	- 2D DWT transformation
+./bin/dwt3d - 3D DWT transformation
+
+2. Run
+
+2.1 2D DWT
+
+The program takes input from a regular monocolor BMP file. There are few such files available under './data/*.bmp'.
+To run the 2D DWT, first specify the input filename, then choose the level of transformation. The level is optional, and will be selected as one if left blank.
+
+For example, the following command transforms image 'head.bmp' with three levels:
+# ./bin/dwt2d ./data/head.bmp 3
+
+The output of the program will be a BMP image named 'dwt_out.bmp'.
+
+2.2 3D DWT
+
+The program takes input from a binary file, in which the image is stored in the column-first format. There are few such files available under './data/*.dat'.
+To run the 3D DWT, first specify the input filename, then choose the level of transformation. The level is optional, and will be selected as one if left blank.
+
+For example, the following command transforms image '3d192f.dat' with three levels:
+# ./bin/dwt3d ./data/3d192f 3
+
+
+

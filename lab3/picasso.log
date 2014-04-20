@@ -1,0 +1,953 @@
+================================================================
+  Picasso - Xilinx OpenCL Design Environment
+  Version: 2013.2.a.80513
+  Build date: Fri Nov 15 15:32:29 PM 2013
+  Copyright (C) 2013 Xilinx Inc. All rights reserved.
+================================================================
+@I [LIC-101] Checked out feature [ap_opencl]
+@I [XCL-10] Running '/usr/local/cs133/Picasso/picasso/Linux_x86_64/bin/picasso_bin'
+            for user 'sanciang' on host 'lnxsrv08.seas.ucla.edu' (Linux_x86_64 version 2.6.32-431.el6.x86_64) on Mon Mar 03 12:04:47 PST 2014
+            in directory '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Creating project: 'lab3_proj'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Target platform set to 'zc706-linux-uart'
+@I [XCL-10] Created new Picasso project 'lab3_proj'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Adding host sources
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Copying existing 'src/lab3_master.c' into host source directory.
+@I [XCL-10] Added source file 'lab3_master.c' to project.
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Creating Kernel: 'fwd97_pd'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Creating and opening project '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd'.
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Adding sources to kernel 'fwd97_pd'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Opening project '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd'.
+@I [XCL-10] Copying existing 'src/fwd97_pd.cl' into kernel source directory.
+@I [XCL-10] Adding design file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/src/kernel/fwd97_pd/fwd97_pd.cl' to the project.
+@I [XCL-10] Adding test bench file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/src/kernel/fwd97_pd/fwd97_pd.cl' to the project.
+@I [XCL-10] Added file 'fwd97_pd.cl' to kernel 'fwd97_pd'.
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Create XCLBIN Container: 'fwd97_pd'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Created new xclbin 'fwd97_pd'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Mapping of kernel: 'fwd97_pd'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] Mapped kernel 'fwd97_pd' to fpga0:OCL_REGION_0
+@I [XCL-10] Kernel will be instantiated in hardware as instance 'fwd97_pd_0'
+@I [XCL-10] Opening project '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd'.
+@I [XCL-10] Creating and opening solution '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd/solution_OCL_REGION_0'.
+@I [XCL-10] Cleaning up the solution database.
+@I [XCL-10] Setting target device to 'xc7z045ffg900-2'
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [XCL-10] ----------------------------------------------------------------
+@I [XCL-10] -- Compiling the host code for  'arm' 
+@I [XCL-10] ----------------------------------------------------------------
+@I [XCL-10] Compiling host executable...
+@I [XCL-10] vexec arm-xilinx-linux-gnueabi-g++ -g -Wall -D FPGA_DEVICE -I/usr/local/cs133/Picasso/picasso/runtime/src -I/usr/local/cs133/Picasso/picasso/runtime/driver/include -I/usr/local/cs133/Picasso/picasso/runtime/include/1_2 -L/usr/local/cs133/Picasso/picasso/runtime/lib/zynq -lxilinxopencl -lpthread -lxerces-c -lrt -o /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/host/arm/lab3_proj.exe lab3_master.c
+@I [XCL-10] DIR = /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/src/host
+lab3_master.c: In function 'void fwt97_dl_foo(float*, float*, int, int, int, int)':
+lab3_master.c:103:6: warning: unused variable 'tile_count' [-Wunused-variable]
+lab3_master.c: In function 'void cdf97(float*, float*, int, int, int)':
+lab3_master.c:141:25: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+lab3_master.c: In function 'int main(int, char**)':
+lab3_master.c:175:12: warning: unused variable 'elapsedTime' [-Wunused-variable]
+@I [XCL-10] Host code compiled to '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/host/arm/lab3_proj.exe'
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Building the hardware system
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] ** Building Connectivity Framework for xclbin = fwd97_pd
+@I [XCL-10] ** Generating IP information xml file
+@I [XCL-10] Generating kernel info file...
+@I [XCL-10] ** Generating IP information xml file - COMPLETE
+@I [XCL-10] Generating automatic connections for kernel instance fwd97_pd_0
+@I [XCL-10] Attempting to autoconnect the kernel port 'M_AXI_GMEM':
+@I [XCL-10]   Port Name = M_AXI_GMEM Port Type = addressable Port Mode = master
+@I [XCL-10]   Data Width = 32 Base Address = 0x0 Range = 0x3FFFFFFF
+@I [XCL-10] Found following compatible port(s) on region:
+@I [XCL-10]   Port Name = M_AXI_GMEM0 Port Type = addressable Port Mode = master
+@I [XCL-10]   Data Width = 64 Base Address = 0x00000000 Range = 0x40000000
+@I [XCL-10] Created connection for kernel port 'M_AXI_GMEM':
+@I [XCL-10]   fwd97_pd_0:M_AXI_GMEM -> OCL_REGION_0:M_AXI_GMEM0
+@I [XCL-10] Attempting to autoconnect the kernel port 'S_AXI_CONTROL':
+@I [XCL-10]   Port Name = S_AXI_CONTROL Port Type = addressable Port Mode = slave
+@I [XCL-10]   Data Width = 32 Base Address = 0x0 Range = 0x1000
+@I [XCL-10] Found following compatible port(s) on region:
+@I [XCL-10]   Port Name = S_AXI_CONTROL0 Port Type = addressable Port Mode = slave
+@I [XCL-10]   Data Width = 64 Base Address = 0x80000000 Range = 0x00010000
+@I [XCL-10] Created connection for kernel port 'S_AXI_CONTROL':
+@I [XCL-10]   OCL_REGION_0:S_AXI_CONTROL0 -> fwd97_pd_0:S_AXI_CONTROL
+@I [XCL-10] ** Packaging IP for xclbin = fwd97_pd
+@I [XCL-10] ** Device = fpga0
+@I [XCL-10] ** Packaging kernel fwd97_pd
+@I [XCL-10] Opening project '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd'.
+@I [XCL-10] Opening solution '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/kernel/fwd97_pd/solution_OCL_REGION_0'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [XCL-10] Importing test bench file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/src/kernel/fwd97_pd/fwd97_pd.cl' ... 
+@I [XCL-10] Importing OpenCL C design file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/src/kernel/fwd97_pd/fwd97_pd.cl' ... 
+@I [XCL-10] Starting OpenCL compiliation for 'fwd97_pd.cl' ...
+@I [XCL-10] Starting OpenCL code transformations for 'fwd97_pd.cl' ...
+@I [XCL-10] Checking synthesizability ...
+@I [XCL-10] Starting code transformations ...
+@I [XFORM-102] Partitioning array 'rt_info.2' automatically.
+@I [XCL-111] Elapsed time: 2.34 seconds; current memory usage: 42.7 MB.
+@I [XCL-10] Starting hardware synthesis ...
+@I [XCL-10] Synthesizing 'fwd97_pd' ...
+@I [XCL-10] ----------------------------------------------------------------
+@I [XCL-10] -- Scheduling module 'fwd97_pd' 
+@I [XCL-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [XCL-111] Elapsed time: 1.52 seconds; current memory usage: 47 MB.
+@I [XCL-10] ----------------------------------------------------------------
+@I [XCL-10] -- Exploring micro-architecture for module 'fwd97_pd' 
+@I [XCL-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture binding ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding resource limited operations ...
+@I [BIND-100] Finished micro-architecture binding.
+@I [XCL-111] Elapsed time: 0.33 seconds; current memory usage: 50.4 MB.
+@I [XCL-10] ----------------------------------------------------------------
+@I [XCL-10] -- Generating RTL for module 'fwd97_pd' 
+@I [XCL-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/gmem' to 'ap_bus'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/group_id_x' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/group_id_y' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/group_id_z' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/global_offset_x' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/global_offset_y' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/global_offset_z' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/x' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/tempbank' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'fwd97_pd/args' to 'ap_none'.
+@I [RTGEN-500] Setting interface mode on function 'fwd97_pd' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Module generated: fwd97_pd_fadd_32ns_32ns_32_4_full_dsp|fwd97_pd_fadd_32ns_32ns_32_4_full_dsp_U1.
+@I [RTGEN-100] Module generated: fwd97_pd_fmul_32ns_32ns_32_3_max_dsp|fwd97_pd_fmul_32ns_32ns_32_3_max_dsp_U2.
+@I [RTGEN-100] Module generated: fwd97_pd_mul_32s_32s_32_6|fwd97_pd_mul_32s_32s_32_6_U3.
+@W [RTGEN-101] Port 'fwd97_pd/group_id_y' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+@W [RTGEN-101] Port 'fwd97_pd/group_id_z' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+@W [RTGEN-101] Port 'fwd97_pd/global_offset_y' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+@W [RTGEN-101] Port 'fwd97_pd/global_offset_z' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+@I [RTGEN-100] Finished creating RTL model for 'fwd97_pd'.
+@I [XCL-111] Elapsed time: 0.52 seconds; current memory usage: 54.5 MB.
+@I [RTMG-282] Generating pipelined core: 'fwd97_pd_mul_32s_32s_32_6_MulnS_0'
+@I [XCL-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'fwd97_pd'.
+@I [WVHDL-304] Generating RTL VHDL for 'fwd97_pd'.
+@I [WVLOG-307] Generating RTL Verilog for 'fwd97_pd'.
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
+
+****** Vivado v2013.2 (64-bit)
+  **** Build 272601 by xbuild on Sat Jun 15 11:11:11 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+INFO: [Common 17-81] Feature available: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /usr/local/cs133/vivado/Vivado/2013.2/data/parts/arch.xml
+Parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+INFO: [Common 17-362] Using Tcl App repository from '/usr/local/cs133/vivado/Vivado/2013.2/data/XilinxTclStore'.
+INFO: [Common 17-364] Updating Tcl app persistent manifest '/u/cs/ugrad/sanciang/.Xilinx/Vivado/tclapp/manifest.tcl'
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/usr/local/cs133/vivado/Vivado/2013.2/data/ip'.
+Generating IP 'fwd97_pd_ap_fadd_2_full_dsp'...
+INFO: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'fwd97_pd_ap_fadd_2_full_dsp' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Delivering 'VHDL Synthesis' files for IP 'fwd97_pd_ap_fadd_2_full_dsp'.
+Generating IP 'fwd97_pd_ap_fmul_1_max_dsp'...
+INFO: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'fwd97_pd_ap_fmul_1_max_dsp' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Delivering 'VHDL Synthesis' files for IP 'fwd97_pd_ap_fmul_1_max_dsp'.
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  3 12:05:25 2014...
+@I [XCL-10] -----------------------------------------------------------------
+@I [XCL-10] -- Generating XCLBIN package
+@I [XCL-10] -----------------------------------------------------------------
+
+****** Vivado v2013.2 (64-bit)
+  **** Build 272601 by xbuild on Sat Jun 15 11:11:11 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+INFO: [Common 17-81] Feature available: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /usr/local/cs133/vivado/Vivado/2013.2/data/parts/arch.xml
+Parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+INFO: [Common 17-362] Using Tcl App repository from '/usr/local/cs133/vivado/Vivado/2013.2/data/XilinxTclStore'.
+INFO: [Common 17-364] Updating Tcl app persistent manifest '/u/cs/ugrad/sanciang/.Xilinx/Vivado/tclapp/manifest.tcl'
+source ipirun.tcl
+# set XilinxOpenCL /usr/local/cs133/Picasso/picasso
+# set PlatformName zc706-linux-uart
+# set PlatformPart xc7z045ffg900-2
+# set PlatformBoard xilinx.com:zynq:zc706:1.1
+# create_project ipiprj -part $PlatformPart -force
+# set_property board $PlatformBoard [current_project]
+# lappend KernelPaths ../hls_cores
+# lappend KernelPaths /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/local_lib
+# set_property ip_repo_paths  $KernelPaths [current_fileset]
+# update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/hls_cores'.
+INFO: [IP_Flow 19-1700] Loaded user repository '/usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/local_lib'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/usr/local/cs133/vivado/Vivado/2013.2/data/ip'.
+# source /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/bp.tcl
+## if { [get_files *.bd] eq "" } {
+##    puts "INFO: Currently there are no designs in project, so creating one..."
+##    create_bd_design design
+## }
+WARNING: [Vivado 12-818] No files matched '*.bd'
+INFO: Currently there are no designs in project, so creating one...
+Wrote  : </w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/design.bd> 
+## current_bd_instance
+## set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
+## set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+INFO: [PS7-6] Configuring Board Preset zc706. Please wait ......
+create_bd_cell: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 222.824 ; gain = 53.949
+## set processing_system7_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:* processing_system7_1 ]
+## set_property -dict [ list CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} CONFIG.PCW_USE_M_AXI_GP0 {0} CONFIG.PCW_USE_M_AXI_GP1 {1} CONFIG.PCW_USE_S_AXI_ACP {1} CONFIG.PCW_USE_DEFAULT_ACP_USER_VAL {1} CONFIG.Component_Name {design_processing_system7_1_0}  ] $processing_system7_1
+## set OCL_REGION_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xcl_region:1.0 OCL_REGION_0 ]
+## set_property -dict [ list CONFIG.NUM_MI {1}  ] $OCL_REGION_0
+create_bd_cell: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 253.391 ; gain = 30.566
+## set axi_interconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.0 axi_interconnect_1 ]
+## set_property -dict [ list CONFIG.NUM_MI {1}  ] $axi_interconnect_1
+## set axi_interconnect_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.0 axi_interconnect_2 ]
+## set_property -dict [ list CONFIG.NUM_MI {1}  ] $axi_interconnect_2
+## set proc_sys_reset_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1 ]
+## connect_bd_intf_net -intf_net processing_system7_1_ddr [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_1/DDR]
+## connect_bd_intf_net -intf_net processing_system7_1_fixed_io [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_1/FIXED_IO]
+## connect_bd_intf_net -intf_net OCL_REGION_0_m00_axi [get_bd_intf_pins OCL_REGION_0/M_AXI_GMEM0] [get_bd_intf_pins axi_interconnect_1/S00_AXI]
+## connect_bd_intf_net -intf_net axi_interconnect_1_m00_axi [get_bd_intf_pins axi_interconnect_1/M00_AXI] [get_bd_intf_pins processing_system7_1/S_AXI_ACP]
+## connect_bd_intf_net -intf_net axi_interconnect_2_m00_axi [get_bd_intf_pins axi_interconnect_2/M00_AXI] [get_bd_intf_pins OCL_REGION_0/S_AXI_CONTROL0]
+## connect_bd_intf_net -intf_net s00_axi_1 [get_bd_intf_pins axi_interconnect_2/S00_AXI] [get_bd_intf_pins processing_system7_1/M_AXI_GP1]
+## connect_bd_net -net proc_sys_reset_1_interconnect_aresetn [get_bd_pins proc_sys_reset_1/interconnect_aresetn] [get_bd_pins axi_interconnect_1/ARESETN] [get_bd_pins axi_interconnect_2/ARESETN]
+## connect_bd_net -net proc_sys_reset_1_peripheral_aresetn [get_bd_pins proc_sys_reset_1/peripheral_aresetn] [get_bd_pins OCL_REGION_0/ARESETN] [get_bd_pins axi_interconnect_2/S00_ARESETN] [get_bd_pins axi_interconnect_2/M00_ARESETN] [get_bd_pins axi_interconnect_1/S00_ARESETN] [get_bd_pins axi_interconnect_1/M00_ARESETN]
+## connect_bd_net -net processing_system7_1_fclk_reset0_n [get_bd_pins processing_system7_1/FCLK_RESET0_N] [get_bd_pins proc_sys_reset_1/ext_reset_in]
+## connect_bd_net -net processing_system7_1_fclk_clk0 [get_bd_pins processing_system7_1/FCLK_CLK0] [get_bd_pins proc_sys_reset_1/slowest_sync_clk] [get_bd_pins OCL_REGION_0/ACLK] [get_bd_pins axi_interconnect_1/ACLK] [get_bd_pins axi_interconnect_1/S00_ACLK] [get_bd_pins axi_interconnect_1/M00_ACLK] [get_bd_pins axi_interconnect_2/ACLK] [get_bd_pins axi_interconnect_2/S00_ACLK] [get_bd_pins axi_interconnect_2/M00_ACLK] [get_bd_pins processing_system7_1/M_AXI_GP1_ACLK] [get_bd_pins processing_system7_1/S_AXI_ACP_ACLK]
+## create_bd_addr_seg -range 0x400000 -offset 0x80000000 [get_bd_addr_spaces processing_system7_1/Data] [get_bd_addr_segs OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi/reg0] SEG1
+## create_bd_addr_seg -range 0x40000000 -offset 0x0 [get_bd_addr_spaces OCL_REGION_0/M_AXI_GMEM0_TERM/m_axi] [get_bd_addr_segs processing_system7_1/S_AXI_ACP/ACP_DDR_LOWOCM] SEG1
+## create_bd_addr_seg -range 0x1000000 -offset 0xFC000000 [get_bd_addr_spaces OCL_REGION_0/M_AXI_GMEM0_TERM/m_axi] [get_bd_addr_segs processing_system7_1/S_AXI_ACP/ACP_QSPI_LINEAR] SEG2
+## create_bd_addr_seg -range 0x400000 -offset 0xE0000000 [get_bd_addr_spaces OCL_REGION_0/M_AXI_GMEM0_TERM/m_axi] [get_bd_addr_segs processing_system7_1/S_AXI_ACP/ACP_IOP] SEG3
+# generate_target {synthesis simulation implementation} [get_files  ./ipiprj.srcs/sources_1/bd/design/design.bd]
+WARNING: [BD 41-237] Bus Interface property BUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_pc/S_AXI(0) and /OCL_REGION_0/M_AXI_GMEM0_TERM/m_axi(4)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(4)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(4)
+WARNING: [BD 41-237] Bus Interface property WUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(4)
+WARNING: [BD 41-237] Bus Interface property RUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(4)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_ACP(3) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(1) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(4) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(4) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property WUSER_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(4) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property RUSER_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(4) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property BUSER_WIDTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(4) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(1) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /OCL_REGION_0/S_AXI_CONTROL0_TERM/s_axi(256) and /axi_interconnect_2/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-236] Width mismatch when connecting port: '/OCL_REGION_0/M_AXI_GMEM0_awlock'(1) to net 'm_axi_gmem0_term_m_axi_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-236] Width mismatch when connecting port: '/OCL_REGION_0/M_AXI_GMEM0_arlock'(1) to net 'm_axi_gmem0_term_m_axi_ARLOCK'(2) - Only lower order bits will be connected.
+Verilog Output written to : design.v
+Verilog Output written to : design_wrapper.v
+Wrote  : </w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/design.bd> 
+INFO: [BD 41-539] Not generating up to date 'Simulation' target for block design design
+INFO: [BD 41-539] Not generating up to date 'Implementation' target for block design design
+Generating IP 'design_processing_system7_1_0'...
+Delivering 'Vivado Synthesis' files for IP 'design_processing_system7_1_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1 .
+Generating IP 'design_M_AXI_GMEM0_TERM_2'...
+Delivering 'Verilog Synthesis' files for IP 'design_M_AXI_GMEM0_TERM_2'.
+Generating IP 'design_M_AXI_GMEM0_TERM_2'...
+Delivering 'Verilog Simulation' files for IP 'design_M_AXI_GMEM0_TERM_2'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /OCL_REGION_0/M_AXI_GMEM0_TERM .
+Generating IP 'design_S_AXI_CONTROL0_TERM_1'...
+Delivering 'Verilog Synthesis' files for IP 'design_S_AXI_CONTROL0_TERM_1'.
+Generating IP 'design_S_AXI_CONTROL0_TERM_1'...
+Delivering 'Verilog Simulation' files for IP 'design_S_AXI_CONTROL0_TERM_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /OCL_REGION_0/S_AXI_CONTROL0_TERM .
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_proc_sys_reset_1_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Delivering 'VHDL Synthesis' files for IP 'design_proc_sys_reset_1_0'.
+Delivering 'Implementation' files for IP 'design_proc_sys_reset_1_0'.
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_proc_sys_reset_1_0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+Delivering 'VHDL Simulation' files for IP 'design_proc_sys_reset_1_0'.
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'design_proc_sys_reset_1_0'.
+INFO: [IP_Flow 19-120] Not generating up to date IP 'design_proc_sys_reset_1_0'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_1 .
+Generating IP 'design_auto_pc_0'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_pc_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_pc_0'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_pc_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_1/s00_couplers/auto_pc .
+Generating IP 'design_auto_us_0'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_us_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_us_0'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_us_0'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_1/s00_couplers/auto_us .
+Generating IP 'design_auto_pc_1'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_pc_1'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_pc_1'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_pc_1'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_2/s00_couplers/auto_pc .
+generate_target: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 326.371 ; gain = 64.629
+# source $XilinxOpenCL/runtime/bin/ipi_util.tcl
+## array unset gRegions
+## array unset gDebugNets
+## proc find_connected_intf_pin { start_pin } {
+##   set net [get_bd_intf_nets -of_objects $start_pin]
+##   set pins [get_bd_intf_pins -of_objects $net]
+##   set idx [lsearch $pins $start_pin]
+##   set pins [lreplace $pins $idx $idx]
+## 
+##   if { [llength $pins] != 1 } {
+##     puts "ERROR: find_connected_intf_pin : net is not point to point" 
+##     return
+##   }
+##   return [lindex $pins 0]
+## }
+## proc probe_base_platform { } {
+##   global ::gRegions
+##   set regions  [get_bd_cells -filter {VLNV == xilinx.com:ip:xcl_region:1.0}]
+##   foreach region $regions {
+##     array unset dregion
+##     set ports [get_bd_cells -of_objects $region]
+##     set hier_prefix [regexp -inline {.*/+} $region]
+##     set formatRegionName [string range $region [string length $hier_prefix] end]
+## 
+##     # Iterate over port terminators
+##     foreach port $ports {
+##       array unset dport
+##       set formatName [regexp -inline {[^/]*(?=_TERM$)} $port]
+## 
+##       # Determine the type of the port
+##       set is_master 2
+##       if {[get_property VLNV $port] == "xilinx.com:ip:axi_master_term:1.0"} {
+##         set is_master 1
+##         set dport("mode") "master"
+##       } elseif {[get_property VLNV $port] == "xilinx.com:ip:axi_slave_term:1.0"} {
+##         set is_master 0
+##         set dport("mode") "slave"
+##       } else {
+##         puts "ERROR! Invalid port"
+##       }
+## 
+##       # Get clock frequency
+##       set clkp [get_bd_pins -of_objects $port -filter {TYPE==clk}]
+##       set clkfreq [get_property CONFIG.FREQ_HZ $clkp]
+##       set dregion("clkfreq") $clkfreq
+## 
+##       # Get associated the port pin
+##       set port_pin [get_bd_intf_pins -of_objects $port]
+##       if { [llength $port_pin] != 1 } {
+##         puts "ERROR: more than one interface pin found"
+##       }
+## 
+##       # Get port properties
+##       set dataWidth [get_property CONFIG.DATA_WIDTH $port_pin]
+##       set dport("dataWidth") $dataWidth
+##       set protocol [get_property CONFIG.PROTOCOL $port_pin]
+##       set dport("protocol") $protocol
+##       set idWidth [get_property CONFIG.ID_WIDTH $port_pin]
+##       set dport("idWidth") $idWidth
+##       set addrWidth [get_property CONFIG.ADDR_WIDTH $port_pin]
+##       set dport("addrWidth") $addrWidth
+##       set userWidth [get_property CONFIG.ARUSER_WIDTH $port_pin]
+##       if { $userWidth != [get_property CONFIG.AWUSER_WIDTH $port_pin] ||
+##            $userWidth != [get_property CONFIG.BUSER_WIDTH $port_pin]  ||
+##            $userWidth != [get_property CONFIG.RUSER_WIDTH $port_pin]  ||
+##            $userWidth != [get_property CONFIG.WUSER_WIDTH $port_pin]  } {
+##              puts "ERROR: User widths must be the same!"
+##            }
+##       set dport("userWidth") $userWidth
+##       set maxBurstLength [get_property CONFIG.MAX_BURST_LENGTH $port_pin]
+##       set dport("maxBurstLength") $maxBurstLength
+## 
+##       # Get the connected interconnect
+##       set internal_connect [find_connected_intf_pin $port_pin]
+##       set external_connect [find_connected_intf_pin $internal_connect]
+##       set postfix [string range $external_connect [string length $hier_prefix] end]
+##       set topmod [get_bd_cell [regexp -inline {^[^/]*} $postfix]]
+##       if {$topmod != "" && [get_property VLNV $topmod] == "xilinx.com:ip:axi_interconnect:2.0"} {
+##       } else {
+##         # A direct connection
+##       }
+##       set dport("connection") $topmod
+## 
+##       # Get Address Ranges
+##       if {$is_master == 1} {
+##         set segs [get_bd_addr_segs -of_objects $port_pin]
+##         set slsegs [get_bd_addr_segs -of_objects $segs]
+##         set daddrsegs {}
+## 
+##         set i 0
+##         foreach slave $slsegs {
+##           set seg [lindex $segs $i]
+##           lappend daddrsegs [list name $slave baddr [get_property OFFSET $seg] range [get_property RANGE $seg]]
+##           set i [expr $i + 1]
+##         }
+##       # Slave Address Blocks
+##       } elseif {$is_master == 0} {
+##         set daddrsegs {}
+##         set segs [get_bd_addr_segs -of_objects $port_pin]
+##         set slsegs [get_bd_addr_segs -of_objects $segs]
+##         set daddrsegs {}
+## 
+##         foreach slave $slsegs {
+##           lappend daddrsegs [list name $slave baddr [get_property OFFSET $slave] range [get_property RANGE $slave]]
+##         }
+## 
+##         set masters [find_bd_objs -relation ADDRESSING_MASTER $port_pin]
+##         if {[llength $masters] > 1} {
+##           puts "ERROR: Only one master supported per slave port"
+##         }
+##         set class [get_property CLASS $masters]
+##         if {$class == "bd_intf_port"} {
+##           set dport("addrspace") $masters
+##         } else {
+##           set mstInst [string range $masters [string length $hier_prefix] end]
+##           set mstPort [regexp -inline {[^/]*$} $mstInst]
+##           set mstInst [regexp -inline {^[^/]*} $mstInst]
+##           set segname [get_bd_addr_spaces -of_objects $masters]
+##           set dport("addrspace") $segname
+##         }
+##       }
+##       set dport("addrsegs") $daddrsegs
+##       set dports($formatName) [array get dport]
+##     }
+## 
+##     # Get CLOCK/ARESETN pins
+##     set clkpin [get_bd_pins "$region/ACLK"]
+##     set clknet [get_bd_nets -of_objects $clkpin]
+##     set dregion("clk") $clknet
+## 
+##     set rstpin [get_bd_pins "$region/ARESETN"]
+##     set rstnet [get_bd_nets -of_objects $rstpin]
+##     set dregion("aresetn") $rstnet
+## 
+##     set dregion("ports") [array get dports]
+##     set gRegions($formatRegionName) [array get dregion]
+##   }
+## 
+##   # DEBUG OUTPUT
+## #  puts "PRINT ALL REGIONS"
+## #  foreach region [array names gRegions] {
+## #    array set properties $gRegions($region)
+## #    foreach property [array names properties] {
+## #      if { $property == "\"ports\"" } {
+## #        array set aports $properties($property)
+## #        foreach port [array names aports] {
+## #          puts " PORT: $port"
+## #          array set aportprop $aports($port)
+## #          foreach portp [array names aportprop] {
+## #            puts "  $portp is $aportprop($portp)"
+## #          }
+## #        }
+## #      } else {
+## #        puts " $property = $properties($property)"
+## #      }
+## #    }
+## #  }
+## #  puts "END PRINT ALL REGIONS"
+## 
+## }
+## proc get_region_clk_net {regionName} {
+##   global ::gRegions
+##   array set aregion $gRegions($regionName)
+##   return $aregion("clk")
+## }
+## proc get_region_rst_net {regionName} {
+##   global ::gRegions
+##   array set aregion $gRegions($regionName)
+##   return $aregion("aresetn")
+## }
+## proc disconnect_pin_by_name {name} {
+##   set pin [get_bd_pins $name]
+##   set pinnet [get_bd_nets -of_objects $pin]
+##   if {[llength $pinnet] != 0} {
+##     disconnect_bd_net $pinnet $pin
+##   }
+## }
+## proc get_free_axi_ic_port {axiic type} {
+## 
+##   set prefix ""
+##   if {$type == "master"} {
+##     set prefix "M" 
+##   } elseif {$type == "slave"} {
+##     set prefix "S"
+##   }
+## 
+##   set num_i [get_property "CONFIG.NUM_${prefix}I" $axiic]
+## 
+##   # Check all pins to see if they are used
+##   for {set i 0} {$i < $num_i} {incr i} {
+##     set pinname [format "$axiic/${prefix}%.2d_AXI" $i]
+##     set pin [get_bd_intf_pins $pinname]
+## 
+##     # Usage defined by "connected_to" relation
+##     set connection [find_bd_objs -relation CONNECTED_TO $pin]
+##     if {[llength $connection] == 0} {
+##       # Disconnect clk/reset if they are connected
+##       disconnect_pin_by_name [format "/$axiic/${prefix}%.2d_ACLK" $i]
+##       disconnect_pin_by_name [format "/$axiic/${prefix}%.2d_ARESETN" $i]
+##       return $pin
+##     }
+##   }
+## 
+##   # No unused pins found, create new one
+##   set_property "CONFIG.NUM_${prefix}I" [expr $num_i + 1] $axiic
+##   set pinname [format "$axiic/${prefix}%.2d_AXI" $num_i]
+##   set pin [get_bd_intf_pins $pinname]
+##   return $pin
+## }
+## proc  inst_kernel {name type {params []} lregion} {
+##   global ::gRegions
+## 
+##   # Create the cell
+##   set obj [create_bd_cell -vlnv "xilinx.com:hls:$type:1.0" -type ip -name "${lregion}_${name}"]
+## 
+##   # Set properties
+##   if {[llength $params] > 1} {
+##     array set plparams $params
+##     foreach param [array names plparams] {
+##       set_property "CONFIG.$param" $plparams($param)  $obj
+##     }
+##   }
+## 
+##   # Create clk/reset
+##   array set aregion $gRegions($lregion)
+##   set instclkpin [get_bd_pins -of_objects $obj -filter {TYPE == clk}]
+##   connect_bd_net -net $aregion("clk") $instclkpin
+##   set instrstpin [get_bd_pins -of_objects $obj -filter {TYPE ==rst}]
+##   connect_bd_net -net $aregion("aresetn")  $instrstpin
+## 
+##   return "${lregion}_${name}"
+## }
+## proc connect_kernel {srcInst srcPort dstInst dstPort laddrsegs {debug 0} } {
+##   global ::gRegions 
+##   global ::gDebugNets
+## 
+##   set isSrcRegion 0
+##   set isDstRegion 0
+##   set match [array names gRegions -exact $srcInst]
+##   # Src is region
+##   if {$match != ""} {
+##     set isSrcRegion 1
+##     set RegionClk [get_region_clk_net $srcInst]
+##     set srcProperties [connect_kernel_region $srcInst $srcPort "slave"]
+##     set SrcPortBD [lindex $srcProperties 0]
+##     set SrcAddrSpace [lindex $srcProperties 1]
+##   } else {
+##     set SrcPortBD [get_bd_intf_pins "$srcInst/$srcPort"]
+##     set SrcAddrSpace [get_bd_addr_spaces -of_objects $SrcPortBD]
+##   }
+## 
+##   # Dst is a region
+##   set match [array names gRegions -exact $dstInst]
+##   if {$match != ""} {
+##     set isDstRegion 1
+##     set RegionClk [get_region_clk_net $dstInst]
+##     set dstProperties [connect_kernel_region $dstInst $dstPort "master"]
+##     set DstPortBD [lindex $dstProperties 0]
+##     set DstAddrSpace [lindex $dstProperties 1]
+##   } else {
+##     set DstPortBD [get_bd_intf_pins "$dstInst/$dstPort"]
+##     set addrsegs [get_bd_addr_segs -of_objects $DstPortBD]
+## 
+##     # There should only be one segment if any
+##     if {[llength $addrsegs] == 1} {
+##       array set aaddrsegs $laddrsegs
+##       set DstAddrSpace [list [concat [list name $addrsegs] $aaddrsegs($dstInst)] ]
+##     }
+##   }
+## 
+##   puts "Connect $SrcPortBD -> $DstPortBD"
+##   connect_bd_intf_net $SrcPortBD $DstPortBD
+## 
+##   # Set Debug
+##   if { $debug != 0 && ($isSrcRegion == 1 || $isDstRegion == 1) } {
+##     if { $isSrcRegion == 1 } {
+##       set debugNet [get_bd_intf_nets -of $DstPortBD]
+##       puts "Mark $debugNet as DEBUG"
+##       set_property HDL_ATTRIBUTE.MARK_DEBUG true $debugNet
+##       set hier_prefix [regexp -inline {.*/+} $debugNet]
+##       set formatName [string range $debugNet [string length $hier_prefix] end]
+##       set gDebugNets($formatName) [list $RegionClk ${dstInst}_${dstPort} $debug]
+##     } elseif { $isDstRegion == 1 } {
+##       set debugNet [get_bd_intf_nets -of $SrcPortBD]
+##       puts "Mark $debugNet as DEBUG"
+##       set_property HDL_ATTRIBUTE.MARK_DEBUG true $debugNet
+##       set hier_prefix [regexp -inline {.*/+} $debugNet]
+##       set formatName [string range $debugNet [string length $hier_prefix] end]
+##       set gDebugNets($formatName) [list $RegionClk ${srcInst}_${srcPort} $debug]
+##     }
+##   }
+## 
+##   # Create address segments
+##   if { [info exists DstAddrSpace] && [info exists SrcAddrSpace] } {
+##     set segcnt 0
+##     foreach seg $DstAddrSpace {
+##       array set asegd $seg
+##       set segn $asegd(name)
+##       set segend [regexp -inline {[^/]*$} "$segn"]
+##       set segname "${srcInst}_${srcPort}_${dstInst}_${dstPort}_${segend}_${segcnt}"
+##       create_bd_addr_seg -range $asegd(range) -offset $asegd(baddr) $SrcAddrSpace [get_bd_addr_segs $segn] $segname
+##       set segcnt [expr $segcnt + 1]
+##     }
+##   }
+## }
+## proc generate_debug_cores { } {
+##   ::global gDebugNets
+## 
+##   set i 0
+##   foreach debugnet [array names gDebugNets] {
+##     set ila_name u_ila_$i
+##     set probenum 0
+## 
+##     # Get clock net
+##     set clkregion [lindex $gDebugNets($debugnet) 0]
+##     set hier_prefix [regexp -inline {.*/+} $clkregion]
+##     set formatName [string range $clkregion [string length $hier_prefix] end]
+##     set clknet [get_nets -hierarchical -regexp .*\/${formatName}.*]
+##     puts $clknet
+## 
+##     # Generate ila
+##     set debugdepth [lindex $gDebugNets($debugnet) 2]
+##     create_debug_core $ila_name labtools_ila_v2
+##     set_property C_DATA_DEPTH $debugdepth [get_debug_cores $ila_name]
+##     set_property C_TRIGIN_EN false [get_debug_cores $ila_name]
+##     set_property C_TRIGOUT_EN false [get_debug_cores $ila_name]
+##     set_property port_width 1 [get_debug_ports $ila_name/CLK]
+##     connect_debug_port $ila_name/CLK $clknet
+## 
+##     # Group nets
+##     set allnets [get_nets -hierarchical -regexp .*${debugnet}.*]
+##     array unset intfcomponents
+##     foreach net $allnets {
+##       # Remove Hierarchy
+##       set hier_prefix [regexp -inline {.*/+} $net]
+##       set formatName [string range $net [string length $hier_prefix] end]
+##       # Remove Element Index
+##       set groupName [regexp -inline {.*(?=(\[))} $formatName]
+##       if { [string length $groupName] == 0 } {
+##         set groupName $formatName
+##       }
+## 
+##       # Find number of elements in the group
+##       if {[array names intfcomponents -exact $groupName] == ""} {
+##         set intfcomponents($groupName) [lsearch -all -inline -regexp $allnets .*${groupName}.*]
+##       }
+##     }
+##     # Create debug probes
+##     foreach intfcomp [array names intfcomponents] {
+##       if { $probenum != 0 } {
+##         create_debug_port $ila_name PROBE
+##       }
+##       set probeName [format "${ila_name}/PROBE%d" $probenum]
+##       set_property port_width [llength $intfcomponents($intfcomp)] [get_debug_ports $probeName]
+##       connect_debug_port $probeName [get_nets $intfcomponents($intfcomp)]
+##         
+##       set probenum [expr $probenum + 1]
+##     }
+##     set i [expr $i + 1]
+##   }
+## 
+## }
+## proc clean_debug_names { } {
+##   ::global gDebugNets
+## 
+##   set fname ipiprj.runs/impl_1/debug_nets.ltx
+##   if { ! [catch { open $fname r } fp]} {
+##     set probeFile [read $fp]
+##     close $fp
+## 
+##     foreach debugnet [array names gDebugNets] {
+##       set niceName [lindex $gDebugNets($debugnet) 1]
+##       regsub -all $debugnet $probeFile $niceName probeFile
+##     }
+## 
+##     catch { set fp [open ../debug_nets.ltx w]}
+##     puts $fp $probeFile
+##     close $fp
+##   }
+## }
+## proc connect_kernel_region {inst port mode} {
+##   global ::gRegions
+## 
+##   # Get endpoint of region port
+##   array set aregion $gRegions($inst)
+##   array set aports $aregion("ports")
+##   array set aport $aports($port)   
+##   set ConnInst [get_bd_cell $aport("connection")]
+## 
+##   # Check that port mode matches
+##   if {$aport("mode") != $mode} {
+##     puts "ERROR: Specified mode $mode does not match region port mode"
+##     return
+##   }
+## 
+##   # Endpoint is AXI Interconnect
+##   if {[get_property VLNV $ConnInst] == "xilinx.com:ip:axi_interconnect:2.0"} {
+##     puts "Connection is axi interconnect"
+## 
+##     # If Region port is master, look for slave on interconnect 
+##     set portMode ""
+##     if {$mode == "master"} {
+##       set portMode "slave"
+##     } else {
+##       set portMode "master"
+##     }
+##     set PortBD [get_free_axi_ic_port $ConnInst $portMode]
+## 
+##     # Set up the clock/reset
+##     set targetnet [get_region_clk_net $inst]
+##     set targetpin [get_bd_pins -of_objects $targetnet -filter {DIR == O}]
+##     if {[llength $targetpin] == 0} {
+##       set targetpin [get_bd_ports -of_objects $targetnet]
+##     }
+##     regsub {_AXI$} $PortBD "" PortBDRoot
+##     connect_bd_net -net $targetnet [get_bd_pins "${PortBDRoot}_ACLK"] $targetpin
+##     set targetnet [get_region_rst_net $inst]
+##     set targetpin [get_bd_pins -of_objects $targetnet -filter {DIR == O}]
+##     if {[llength $targetpin] == 0} {
+##       set targetpin [get_bd_ports -of_objects $targetnet]
+##     }
+##     connect_bd_net -net $targetnet [get_bd_pins "${PortBDRoot}_ARESETN"] $targetpin
+## 
+##     # Get address space or segments
+##     if {$mode == "slave"} {
+##       set AddrSpace $aport("addrspace")
+##     } else {
+##       set AddrSpace $aport("addrsegs")
+##     }
+##   } else {
+##     puts "Direct connection to not supported!"
+##   }
+##   return [list $PortBD $AddrSpace]
+## }
+## proc inst_pipe { name width depth lregion } {
+##   global ::gRegions
+## 
+##   # Create the cell
+##   set type xilinx.com:ip:axis_data_fifo:1.0
+##   set obj [create_bd_cell -type ip -vlnv $type -name "${lregion}_${name}"]
+## 
+##   # Set properties
+##   set_property CONFIG.FIFO_DEPTH $depth $obj
+## 
+##   # Create clk/reset
+##   array set aregion $gRegions($lregion)
+##   set instclkpin [get_bd_pins -of_objects $obj -filter {TYPE == clk}]
+##   connect_bd_net -net $aregion("clk") $instclkpin
+##   set instrstpin [get_bd_pins -of_objects $obj -filter {TYPE ==rst}]
+##   connect_bd_net -net $aregion("aresetn")  $instrstpin
+## 
+##   return "${lregion}_${name}"
+## }
+# probe_base_platform
+# source map.tcl
+## delete_bd_objs [get_bd_cells /OCL_REGION_0]
+## inst_kernel fwd97_pd_0 fwd97_pd [ list C_M_AXI_GMEM_DATA_WIDTH 32 ] OCL_REGION_0
+## set gaddrsegs [list OCL_REGION_0_fwd97_pd_0 [list baddr 0x80000000 range 0x1000] ]
+## connect_kernel OCL_REGION_0_fwd97_pd_0 M_AXI_GMEM OCL_REGION_0 M_AXI_GMEM0 $gaddrsegs 0
+Connection is axi interconnect
+Connect /OCL_REGION_0_fwd97_pd_0/M_AXI_GMEM -> /axi_interconnect_1/S00_AXI
+## connect_kernel OCL_REGION_0 S_AXI_CONTROL0 OCL_REGION_0_fwd97_pd_0 S_AXI_CONTROL $gaddrsegs 0
+Connection is axi interconnect
+Connect /axi_interconnect_2/M00_AXI -> /OCL_REGION_0_fwd97_pd_0/S_AXI_CONTROL
+# save_bd_design
+Wrote  : </w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/design.bd> 
+# validate_bd_design
+WARNING: [BD 41-237] Bus Interface property BUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_pc/S_AXI(0) and /OCL_REGION_0_fwd97_pd_0/M_AXI_GMEM(1)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property WUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property RUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_ACP(3) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+# generate_target  {synthesis simulation implementation}  [get_files  ./ipiprj.srcs/sources_1/bd/design/design.bd]
+WARNING: [BD 41-237] Bus Interface property BUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_pc/S_AXI(0) and /OCL_REGION_0_fwd97_pd_0/M_AXI_GMEM(1)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property WUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+WARNING: [BD 41-237] Bus Interface property RUSER_WIDTH does not match between /axi_interconnect_1/s00_couplers/auto_us/S_AXI(0) and /axi_interconnect_1/s00_couplers/auto_pc/M_AXI(1)
+INFO: [BD 41-237] Bus Interface property ID_WIDTH does not match between /processing_system7_1/S_AXI_ACP(3) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /processing_system7_1/S_AXI_ACP(5) and /axi_interconnect_1/s00_couplers/auto_us/M_AXI(0)
+WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/OCL_REGION_0_fwd97_pd_0/m_axi_gmem_BUSER
+
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_1/S00_AXI_awlock'(1) to net 'OCL_REGION_0_m00_axi_AWLOCK'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_1/S00_AXI_arlock'(1) to net 'OCL_REGION_0_m00_axi_ARLOCK'(2) - Only lower order bits will be connected.
+Verilog Output written to : design.v
+Verilog Output written to : design_wrapper.v
+Wrote  : </w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/design.bd> 
+INFO: [BD 41-539] Not generating up to date 'Simulation' target for block design design
+INFO: [BD 41-539] Not generating up to date 'Implementation' target for block design design
+Generating IP 'design_processing_system7_1_0'...
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'design_processing_system7_1_0'.
+INFO: [IP_Flow 19-120] Not generating up to date IP 'design_processing_system7_1_0'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /processing_system7_1 .
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1706] Not generating up to date 'Synthesis' target for IP 'design_proc_sys_reset_1_0'.
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'design_proc_sys_reset_1_0'.
+INFO: [IP_Flow 19-120] Not generating up to date IP 'design_proc_sys_reset_1_0'
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1706] Not generating up to date 'Simulation' target for IP 'design_proc_sys_reset_1_0'.
+INFO: [IP_Flow 19-120] Not generating up to date IP 'design_proc_sys_reset_1_0'
+Generating IP 'design_proc_sys_reset_1_0'...
+INFO: [IP_Flow 19-1706] Not generating up to date 'Implementation' target for IP 'design_proc_sys_reset_1_0'.
+INFO: [IP_Flow 19-120] Not generating up to date IP 'design_proc_sys_reset_1_0'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /proc_sys_reset_1 .
+Generating IP 'design_OCL_REGION_0_fwd97_pd_0_0'...
+Delivering 'Verilog Synthesis' files for IP 'design_OCL_REGION_0_fwd97_pd_0_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:floating_point:7.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_utils:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:axi_utils:2.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_pipe:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_wrapper:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_dsp48_addsub:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:mult_gen:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_bram18k:3.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+WARNING: [IP_Flow 19-519] Language mismatch detected between 'VHDL Synthesis Wrapper' and 'Verilog Synthesis' output products. Please check with the IP provider to see if this is expected.
+Generating IP 'design_OCL_REGION_0_fwd97_pd_0_0'...
+Delivering 'Verilog Simulation' files for IP 'design_OCL_REGION_0_fwd97_pd_0_0'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:floating_point:7.0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:xbip_utils:3.0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:axi_utils:2.0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:mult_gen:12.0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+WARNING: [IP_Flow 19-519] Language mismatch detected between 'VHDL Simulation Wrapper' and 'Verilog Simulation' output products. Please check with the IP provider to see if this is expected.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /OCL_REGION_0_fwd97_pd_0 .
+Generating IP 'design_auto_pc_4'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_pc_4'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_pc_4'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_pc_4'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_1/s00_couplers/auto_pc .
+Generating IP 'design_auto_us_2'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_us_2'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_us_2'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_us_2'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_1/s00_couplers/auto_us .
+Generating IP 'design_auto_pc_5'...
+Delivering 'Verilog Synthesis' files for IP 'design_auto_pc_5'.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:10.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+Generating IP 'design_auto_pc_5'...
+Delivering 'Verilog Simulation' files for IP 'design_auto_pc_5'.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block /axi_interconnect_2/s00_couplers/auto_pc .
+generate_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 329.980 ; gain = 1.742
+# if { [file exists /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/bp.xdc] } {
+#   add_files -fileset constrs_1 -norecurse /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/bp.xdc
+# }
+# if { [file exists /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/bp_wrapper.v] } {
+#   add_files -fileset sources_1 -norecurse /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/bp_wrapper.v
+# } else {
+#  make_wrapper -files [get_files ./ipiprj.srcs/sources_1/bd/design/design.bd] -top
+#  import_files -force -norecurse ./ipiprj.srcs/sources_1/bd/design/hdl/design_wrapper.v
+# }
+# update_compile_order -fileset sources_1
+# update_compile_order -fileset sim_1
+# reset_run impl_1
+# reset_run synth_1
+# launch_runs synth_1
+[Mon Mar  3 12:06:52 2014] Launched synth_1...
+Run output will be captured here: /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Mon Mar  3 12:06:52 2014] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log design_wrapper.rds -m64 -mode batch -messageDb vivado.pb -source design_wrapper.tcl
+
+
+****** Vivado v2013.2 (64-bit)
+  **** Build 272601 by xbuild on Sat Jun 15 11:11:11 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: Implementation
+INFO: [Common 17-81] Feature available: Implementation
+INFO: [Common 17-78] Attempting to get a license: Synthesis
+INFO: [Common 17-81] Feature available: Synthesis
+INFO: [Device 21-36] Loading parts and site information from /usr/local/cs133/vivado/Vivado/2013.2/data/parts/arch.xml
+Parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/usr/local/cs133/vivado/Vivado/2013.2/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+INFO: [Common 17-362] Using Tcl App repository from '/usr/local/cs133/vivado/Vivado/2013.2/data/XilinxTclStore'.
+INFO: [Common 17-364] Updating Tcl app persistent manifest '/u/cs/ugrad/sanciang/.Xilinx/Vivado/tclapp/manifest.tcl'
+source design_wrapper.tcl
+# create_project -in_memory -part xc7z045ffg900-2
+# set_property board xilinx.com:zynq:zc706:1.1 [current_project]
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_property ip_repo_paths {
+#   /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/hls_cores
+#   /usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/local_lib
+# } [current_fileset]
+# add_files /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/design.bd
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user repository '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/hls_cores'.
+INFO: [IP_Flow 19-1700] Loaded user repository '/usr/local/cs133/Picasso/picasso/runtime/platforms/zc706-linux-uart/ipi/local_lib'.
+INFO: [IP_Flow 19-2313] Loaded Vivado repository '/usr/local/cs133/vivado/Vivado/2013.2/data/ip'.
+ERROR: [IP_Flow 19-395] Problem reading XCI BOM, Not well formed spirit:vector line 2742: /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_4/design_auto_pc_4.xml(2742)
+CRITICAL WARNING: [IP_Flow 19-182] Failed to load BOM file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_4/design_auto_pc_4.xml'.
+CRITICAL WARNING: [IP_Flow 19-183] Failed to load IP instance 'design_auto_pc_4'.
+CRITICAL WARNING: [IP_Flow 19-1835] Failed to recreate IP instance 'design_auto_pc_4'. Error reading project file(s).
+CRITICAL WARNING: [IP_Flow 19-454] Failed to recreate IP 'design_auto_pc_4' from file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_4/design_auto_pc_4.xci'.
+ERROR: [IP_Flow 19-395] Problem reading XCI BOM, Unexpected end of message spirit:vector line 2742: /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_5/design_auto_pc_5.xml(2742)
+CRITICAL WARNING: [IP_Flow 19-182] Failed to load BOM file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_5/design_auto_pc_5.xml'.
+CRITICAL WARNING: [IP_Flow 19-183] Failed to load IP instance 'design_auto_pc_5'.
+CRITICAL WARNING: [IP_Flow 19-1835] Failed to recreate IP instance 'design_auto_pc_5'. Error reading project file(s).
+CRITICAL WARNING: [IP_Flow 19-454] Failed to recreate IP 'design_auto_pc_5' from file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_pc_5/design_auto_pc_5.xci'.
+ERROR: [IP_Flow 19-395] Problem reading XCI BOM, Unexpected end of message line 2743: /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_us_2/design_auto_us_2.xml(2743)
+CRITICAL WARNING: [IP_Flow 19-182] Failed to load BOM file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_us_2/design_auto_us_2.xml'.
+CRITICAL WARNING: [IP_Flow 19-183] Failed to load IP instance 'design_auto_us_2'.
+CRITICAL WARNING: [IP_Flow 19-1835] Failed to recreate IP instance 'design_auto_us_2'. Error reading project file(s).
+CRITICAL WARNING: [IP_Flow 19-454] Failed to recreate IP 'design_auto_us_2' from file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_auto_us_2/design_auto_us_2.xci'.
+ERROR: [IP_Flow 19-395] Problem reading XCI BOM, Not well formed: /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_OCL_REGION_0_fwd97_pd_0_0/design_OCL_REGION_0_fwd97_pd_0_0.xml
+CRITICAL WARNING: [IP_Flow 19-182] Failed to load BOM file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_OCL_REGION_0_fwd97_pd_0_0/design_OCL_REGION_0_fwd97_pd_0_0.xml'.
+CRITICAL WARNING: [IP_Flow 19-183] Failed to load IP instance 'design_OCL_REGION_0_fwd97_pd_0_0'.
+CRITICAL WARNING: [IP_Flow 19-1835] Failed to recreate IP instance 'design_OCL_REGION_0_fwd97_pd_0_0'. Error reading project file(s).
+CRITICAL WARNING: [IP_Flow 19-454] Failed to recreate IP 'design_OCL_REGION_0_fwd97_pd_0_0' from file '/w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/ip/design_OCL_REGION_0_fwd97_pd_0_0/design_OCL_REGION_0_fwd97_pd_0_0.xci'.
+ERROR: [Common 17-39] 'add_files' failed due to earlier errors.
+
+    while executing
+"add_files /w/ugrad.09/cs/sanciang/Documents/CS133/lab3/lab3_proj/build/system_bld/fwd97_pd/bitstream/fwd97_pd_ipi/ipiprj.srcs/sources_1/bd/design/desi..."
+    (file "design_wrapper.tcl" line 13)
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  3 12:07:01 2014...
+[Mon Mar  3 12:07:01 2014] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 338.012 ; gain = 8.031
+# open_run synth_1 -name netlist_1
+ERROR: [Common 17-69] Command failed: Run 'synth_1' failed. Unable to open
+
+    while executing
+"open_run synth_1 -name netlist_1"
+    (file "ipirun.tcl" line 44)
+Vivado% exi[K[K[Kquit
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  3 12:09:23 2014...
+ERROR: Could not open fwd97_pd_ipi/system.bit
+error : cannot open fwd97_pd_ipi/system.bin
+FATAL: Exception: Unsupported BIT file
+@I [XCL-10] ** Copying files for fwd97_pd into pkg directory
+@I [XCL-112] Total elapsed time: 276.547 seconds; peak memory usage: 54.5 MB.
+@I [LIC-101] Checked in feature [ap_opencl]
